@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="QRCodeWidget.widget.QRCodeWidget" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>QR Code</name>
+    <description>Generate QR codes with Mendix</description>
+    <icon>iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAIVJREFUWEftlNEKwCAIRXX//8+tYhMmSN0YKOKB6CEmeqYyEbV+YFr7fsY8QuFcz+2GGNAVWbyVWgbQOPEMWP9Sv68M7MZxN1AJVAKjFWdb6q622J2CFWGmQAygWAZQ/A30So4M/EWNYZ4pOCWOAXSD5TVgbTT9nsZAJVAJ1B4QAyhJDBDdQaBQGZb6/OEAAAAASUVORK5CYII=</icon>
+    <properties>
+        <property key="barcodeValue" type="attribute" required="true" isPath="optional" pathType="reference">
+            <caption>Value</caption>
+            <category>Datasource</category>
+            <description>Contents of the barcode</description>
+            <attributeTypes>
+                <attributeType name="Integer"/>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+        <property key="barcodeSize" type="integer" required="true" defaultValue="100">
+            <caption>Size</caption>
+            <category>Appearance</category>
+            <description>Size of the barcode in pixels, if it is not responsive. Minimum is set to 25</description>
+        </property>
+        <property key="barcodeResponsive" type="boolean" defaultValue="false">
+            <caption>Responsive</caption>
+            <category>Appearance</category>
+            <description>If set to true,, it will determine the size itself, based on the width of the parent element. If the parent element has a size of 0, it will ignore this and default back to the Size you set here in the modeler</description>
+        </property>
+        <property key="barcodeType" type="enumeration" defaultValue="canvas">
+            <caption>Barcode type</caption>
+            <category>Appearance</category>
+            <description>Type of the element. Note that the colors should be valid hex colors (E.g. #000000). Colors like 'transparent' might also work on Canvas/PNG elements, but not on JPEGs</description>
+            <enumerationValues>
+                <enumerationValue key="canvas">Canvas</enumerationValue>
+                <enumerationValue key="imgpng">Image (png)</enumerationValue>
+                <enumerationValue key="imgjpg">Image (jpg)</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="barcodeFGColor" type="string" required="true" defaultValue="#000000">
+            <caption>Foreground color</caption>
+            <category>Appearance</category>
+            <description/>
+        </property>
+        <property key="barcodeBGColor" type="string" required="true" defaultValue="#FFFFFF">
+            <caption>Background color</caption>
+            <category>Appearance</category>
+            <description/>
+        </property>
+    </properties>
+</widget>
