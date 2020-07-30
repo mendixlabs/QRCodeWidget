@@ -58,7 +58,7 @@ define([
         },
 
         _getSize: function () {
-            if (this.barcodeResponsive) {
+            if (this.barcodeResponsive && this.domNode.parentElement) {
                 var position = domGeom.position(this.domNode.parentElement, false);
                 return position.w > 0 ? position.w : this.barcodeSize;
             } else {
@@ -84,7 +84,7 @@ define([
                 qr.image(options);
             }
 
-            mendix.lang.nullExec(callback);
+            callback && callback();
         },
 
         _updateRendering: function (callback) {
@@ -101,7 +101,7 @@ define([
 
                     if (value === "") {
                         dojoStyle.set(this.domNode, "display", "none");
-                        mendix.lang.nullExec(callback);
+                        callback && callback();
                     } else {
                         this._barcodeNode = dojoConstruct.create(this._elementType, {}, this.domNode);
                         this._generateQr(value, callback);
@@ -110,7 +110,7 @@ define([
                 }));
             } else {
                 dojoStyle.set(this.domNode, "display", "none");
-                mendix.lang.nullExec(callback);
+                callback && callback();
             }
         },
 
