@@ -1,6 +1,6 @@
 {
   "name": "QRCodeWidget",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Generate QR Codes, client-side",
   "license": "Apache 2",
   "author": "J.W. Lagendijk <jelte.lagendijk@mendix.com>",
@@ -29,6 +29,7 @@
     "testProjectFileName": "Test.mpr"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "node ./node_modules/grunt/bin/grunt build"
   }
 }
